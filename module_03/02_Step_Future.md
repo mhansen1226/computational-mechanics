@@ -5,9 +5,9 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.10.3
+    jupytext_version: 1.11.4
 kernelspec:
-  display_name: Python 3
+  display_name: Python 3 (ipykernel)
   language: python
   name: python3
 ---
@@ -82,7 +82,7 @@ _Note: the direction of positive acceleration was changed to up, so that a posit
 
 ### Step through time
 
-In the code cell below, you define acceleration as a function of velocity and add two parameters `c` and `m` to define drag coefficient and mass of the object.  
+In the code cell below, you define acceleration as a function of velocity and add two parameters `c` and `m` to define drag coefficient and mass of the object.
 
 ```{code-cell} ipython3
 def a_freefall(v,c=0.25,m=60):
@@ -140,7 +140,7 @@ computed variables. Note that you use the Matplotlib
 [`subplot()`](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.subplot.html?highlight=matplotlib%20pyplot%20subplot#matplotlib.pyplot.subplot)
 function to get the two plots in one figure. The argument to `subplot()`
 is a set of three digits, corresponding to the number of rows, number of
-columns, and plot number in a matrix of sub-plots. 
+columns, and plot number in a matrix of sub-plots.
 
 ```{code-cell} ipython3
 # plot velocity and position over time
@@ -220,7 +220,7 @@ $\dot{\mathbf{y}} = \begin{bmatrix}
 v \\ \frac{c}{m}v^2-g
 \end{bmatrix}.$
 
-Equation (9) above represents the _state_ of the system, at any given instant in time. A code design for the numerical solution that generalizes to other changing systems (or _dynamical systems_) is to write one function that computes the right-hand side of the differential equation (the derivatives of the state variables), and another function that takes a state and applies the numerical method for each time increment. The solution is then computed in one `for` statement that calls these functions. 
+Equation (9) above represents the _state_ of the system, at any given instant in time. A code design for the numerical solution that generalizes to other changing systems (or _dynamical systems_) is to write one function that computes the right-hand side of the differential equation (the derivatives of the state variables), and another function that takes a state and applies the numerical method for each time increment. The solution is then computed in one `for` statement that calls these functions.
 
 +++
 
@@ -321,7 +321,7 @@ for i in range(N-1):
     num_sol[i+1] = eulerstep(num_sol[i], freefall, dt)
 ```
 
-Did it work? Exciting! Let's plot in the same figure both the numerical solution and the experimental data. 
+Did it work? Exciting! Let's plot in the same figure both the numerical solution and the experimental data.
 
 ```{code-cell} ipython3
 fig = plt.figure(figsize=(6,4))
@@ -495,3 +495,7 @@ plt.legend();
 3. Euler method. (2017, October 13). In Wikipedia, The Free Encyclopedia. Retrieved 01:21, November 10, 2017, from https://en.wikipedia.org/w/index.php?title=Euler_method&oldid=805120184
 
 4. _Computational Physics with Python_, lecture notes by Eric Ayars, California State University, Chico. Available online on the author's youbsite: https://physics.csuchico.edu/ayars/312/handouts/comp-phys-python.pdf
+
+```{code-cell} ipython3
+
+```
