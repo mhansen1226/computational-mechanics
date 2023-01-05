@@ -333,7 +333,6 @@ class RocketSolver:
             fig.set_figwidth(12)
             eq_ax.set(xlabel='$m_0/m_f$', ylabel='$\Delta v/u$', title=r'Tsiolkovsky: $\frac{\Delta v}{u}=\ln(\frac{m_0}{m_f})$')
             err_ax.set(xlabel='$m_0/m_f$', ylabel='error', title=r'Error: $|u\ln(\frac{m_0}{m_f}) - \Delta v|$')
-            fig.suptitle('Analytical vs Numerical')
         y, v, m = model.T
         
         # tsiolkovsky equation
@@ -458,24 +457,9 @@ axes = simple_rocket_solver.plot_all()
 simple_rocket_solver.solve_model(heun_step)
 simple_rocket_solver.plot_all(axes=axes);
 ```
-
-
-    
-![png](Project_03_files/Project_03_25_0.png)
-    
-
-
-
 ```python
 simple_rocket_solver.plot_against_analytical();
 ```
-
-
-    
-![png](Project_03_files/Project_03_26_0.png)
-    
-
-
 ## Part 2: More Realistic Rocket Model
 
 
@@ -490,24 +474,9 @@ axes = rocket_solver.plot_all()
 rocket_solver.solve_model(heun_step)
 rocket_solver.plot_all(axes=axes);
 ```
-
-
-    
-![png](Project_03_files/Project_03_29_0.png)
-    
-
-
-
 ```python
 rocket_solver.plot_against_analytical();
 ```
-
-
-    
-![png](Project_03_files/Project_03_30_0.png)
-    
-
-
 ## Part 3: Finding Mass Change Rate to Reach 300 m
 
 
@@ -522,15 +491,6 @@ dm_300m, _ = mod_secant(f_dm, .00001, x[0,0])
 print(f'>> The correct mass change rate: {dm_300m:.4e} kg/s')
 ```
 
-    Running incremental search from 0.05 to 0.4 for 10 iterations ...
-    >> Number of brackets: 1
-    >> Root between 0.0500 - 0.0889
-    
-    Running modified secant with initial guess 0.0500 ...
-    >> The correct mass change rate: 5.8765e-02 kg/s
-
-
-
 ```python
 rocket_solver = RocketSolver(rocket, dm=dm_300m)
 t, model = rocket_solver.solve_model(heun_step)
@@ -538,9 +498,3 @@ ax = rocket_solver.plot(0)
 ax.plot(t[-1], model[-1,0], '*', markersize=15, label=f'detonation at y = {model[-1,0]:.0f}')
 ax.legend();
 ```
-
-
-    
-![png](Project_03_files/Project_03_33_0.png)
-    
-
