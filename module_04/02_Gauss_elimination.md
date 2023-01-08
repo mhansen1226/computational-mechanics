@@ -5,9 +5,9 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.10.3
+    jupytext_version: 1.11.4
 kernelspec:
-  display_name: Python 3
+  display_name: Python 3 (ipykernel)
   language: python
   name: python3
 ---
@@ -500,7 +500,7 @@ U=np.array([[-7,3,0],[0,-16,12],[0,0,-9]])
 
 Use the `@`-symbol to confirm LU = A. 
 
-`L@U` 
+`L@U`
 
 ```{code-cell} ipython3
 
@@ -550,7 +550,7 @@ y_{1} \\
 y_{2} \\
 y_{3}\end{array}\right]$
 
-You can solve these equations without Gauss elimination. You just need to use a __forward substitution__ for $\mathbf{Ly}=\mathbf{b}$ and a __backward substitution__ for $\mathbf{Ux}=\mathbf{y}$. 
+You can solve these equations without Gauss elimination. You just need to use a __forward substitution__ for $\mathbf{Ly}=\mathbf{b}$ and a __backward substitution__ for $\mathbf{Ux}=\mathbf{y}$.
 
 ```{code-cell} ipython3
 def solveLU(L,U,b):
@@ -615,7 +615,6 @@ In the last two comparisons, it is not always immediately obvious that the LU-de
 * $x_1=[0...50]~mg/m^3$
 
 * $x_2=[0...50]~mg/m^3$
-
 
 ```{code-cell} ipython3
 N=51 # meshgrid is NxN
@@ -851,7 +850,7 @@ a. $\left[ \begin{array}{cccc}
 2/3 \end{array} \right]\neq
 \left[ \begin{array}{c}
 2 \\
-1 \end{array} \right]$ 
+1 \end{array} \right]$
 
 ```{code-cell} ipython3
 Aa@np.array([0,2/3])
@@ -869,7 +868,7 @@ x_{2} \end{array} \right]=
 1.0000 \\
 2 \end{array} \right]$
 
-and the solution changes to $x_1=1/3$ and $x_2=2/3$. This solution satisfies our initial equations. 
+and the solution changes to $x_1=1/3$ and $x_2=2/3$. This solution satisfies our initial equations.
 
 ```{code-cell} ipython3
 Aa = np.array([[1,1],[1e-19,3]])
@@ -906,7 +905,7 @@ print(aug_b)
 
 ## Exercise
 
-Swap row 1 with either row 2 or row 3. What is the solution for `x_b` now? Show that if you plug in the solution for $[x_1,~x_2,~x_3]$ into the unpivoted $\mathbf{A}$ that the result is $[8,~-3,~5]$. 
+Swap row 1 with either row 2 or row 3. What is the solution for `x_b` now? Show that if you plug in the solution for $[x_1,~x_2,~x_3]$ into the unpivoted $\mathbf{A}$ that the result is $[8,~-3,~5]$.
 
 ```{code-cell} ipython3
 
@@ -974,4 +973,4 @@ solveLU(L,U,P.T@bb)
 
 2. Kiusalaas, Jaan _Numerical Methods in Engineering with Python 3._ __ch 2.__ Cambridge University Press. 
 
-3. [_"Essence of Linear Algebra"_](http://3b1b.co/eola) 3 Blue 1 Brown Linear algebra series. 
+3. [_"Essence of Linear Algebra"_](http://3b1b.co/eola) 3 Blue 1 Brown Linear algebra series.
