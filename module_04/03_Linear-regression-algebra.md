@@ -5,9 +5,9 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.10.3
+    jupytext_version: 1.11.4
 kernelspec:
-  display_name: Python 3
+  display_name: Python 3 (ipykernel)
   language: python
   name: python3
 ---
@@ -176,7 +176,7 @@ Our final least squares linear regression is as follows
 
 $\mathbf{Z^Ty}=[\mathbf{Z^T Z}]\mathbf{a}$
 
-which is a $[3\times 1]=[3 \times 3][3 \times 1]$, set of equations. 
+which is a $[3\times 1]=[3 \times 3][3 \times 1]$, set of equations.
 
 ```{code-cell} ipython3
 a = np.linalg.solve(Z.T@Z,Z.T@y)
