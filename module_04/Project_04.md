@@ -260,3 +260,7 @@ for truss in steel, aluminum:
         truss.solve()
     print(truss, '\n')
 ```
+
+```python
+
+```

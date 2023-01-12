@@ -5,13 +5,12 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.10.3
+    jupytext_version: 1.11.4
 kernelspec:
-  display_name: Python 3
+  display_name: Python 3 (ipykernel)
   language: python
   name: python3
 ---
-
 
 # Revisiting Derivatives
 
@@ -66,7 +65,7 @@ Here you have the numerical second derivative of a function, $f(x)$, with __trun
 
 ## Using your numerical derivatives
 
-Consider the example of taking the derivative of $f(x) = \sin(x)$ with only 10 data points per period. Let's assume there is no random error in the signal. First, you can plot the values you expect since you know the derivatives of $\sin(x)$. 
+Consider the example of taking the derivative of $f(x) = \sin(x)$ with only 10 data points per period. Let's assume there is no random error in the signal. First, you can plot the values you expect since you know the derivatives of $\sin(x)$.
 
 ```{code-cell} ipython3
 import numpy as np
@@ -92,7 +91,7 @@ plt.xlabel('x')
 plt.ylabel('f(x), f\'(x), f\'\'(x)');
 ```
 
-Next, you use your definitions for first and second derivatives to get the approximate derivatives, $f'(x)~and~f''(x)$. You are using a forward difference method so for $f'(x)$ you truncate the values by 1 and for $f''(x)$, you truncate the values by 2. 
+Next, you use your definitions for first and second derivatives to get the approximate derivatives, $f'(x)~and~f''(x)$. You are using a forward difference method so for $f'(x)$ you truncate the values by 1 and for $f''(x)$, you truncate the values by 2.
 
 ```{code-cell} ipython3
 ## numerical derivatives
@@ -128,7 +127,7 @@ $f'(x_{i})=\frac{f(x_{i})-f(x_{i-1})}{h}+O(h)$
 
 $f''(x_{i})=\frac{f(x_{i})-2f(x_{i-1})+f(x_{i-2})}{h^2}+O(h)$
 
-Plot the first and second derivatives of $\sin(x)$ using the same x-locations as you did above. 
+Plot the first and second derivatives of $\sin(x)$ using the same x-locations as you did above.
 
 ```{code-cell} ipython3
 
@@ -241,7 +240,7 @@ __Table of derivatives and the corresponding forward, backward, and central diff
 </tr>
 <tr class="even">
 <td><span class="math inline">\(\frac{d^2f}{dx^2}\)</span></td>
-<td><span class="math inline">\(\frac{f(x_{i+2})-2f(x_{i+1})-3f(x_{i})}{h^2}\)</span></td>
+<td><span class="math inline">\(\frac{f(x_{i+2})-2f(x_{i+1})-f(x_{i})}{h^2}\)</span></td>
 <td><span class="math inline">\(\frac{f(x_{i})-2f(x_{i-1})+f(x_{i-2})}{h^2}\)</span></td>
 <td><span class="math inline">\(\frac{f(x_{i+1})-2f(x_{i})+f(x_{i-1})}{h^2}\)</span></td>
 </tr>
@@ -269,3 +268,7 @@ __Table of derivatives and the corresponding forward, backward, and central diff
 * How to approximate derivatives using backward difference methods
 * How to approximate derivatives using central difference methods
 * How to approximate higher order derivatives with forward, backward, and central differences
+
+```{code-cell} ipython3
+
+```
